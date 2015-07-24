@@ -19,6 +19,11 @@ import uk.ac.soton.ecs.summerschool.vision101.utils.VideoCaptureComponent;
  */
 public class SimpleCameraDemo implements Slide {
 	protected VideoCaptureComponent vc;
+	private String devName;
+
+	public SimpleCameraDemo(String devName) {
+		this.devName = devName;
+	}
 
 	@Override
 	public JPanel getComponent(int width, int height) throws IOException {
@@ -27,7 +32,7 @@ public class SimpleCameraDemo implements Slide {
 		base.setOpaque(false);
 		base.setPreferredSize(new Dimension(width, height));
 		base.setLayout(new GridBagLayout());
-		vc = new VideoCaptureComponent(640, 480);
+		vc = new VideoCaptureComponent(640, 480, devName);
 		base.add(vc);
 
 		return base;
@@ -39,6 +44,6 @@ public class SimpleCameraDemo implements Slide {
 	}
 
 	public static void main(String[] args) throws IOException {
-		new SlideshowApplication(new SimpleCameraDemo(), 1024, 768, App.getBackground());
+		new SlideshowApplication(new SimpleCameraDemo("FaceTime"), 1024, 768, App.getBackground());
 	}
 }

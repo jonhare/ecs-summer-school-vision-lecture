@@ -73,7 +73,7 @@ public class InmoovDemo implements Slide, VideoDisplayListener<MBFImage>, Action
 		base.setOpaque(false);
 		base.setPreferredSize(new Dimension(width, height));
 		base.setLayout(new GridBagLayout());
-		vc = new VideoCaptureComponent(640, 480);
+		vc = new VideoCaptureComponent(640, 480, "Hercules");
 		base.add(vc);
 
 		// add a listener for new video frames

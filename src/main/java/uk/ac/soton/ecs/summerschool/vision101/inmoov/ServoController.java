@@ -88,7 +88,7 @@ public class ServoController implements Runnable, Closeable {
 					e.printStackTrace();
 				}
 			} else {
-				System.err.println("Sleeptime = " + sleepTime);
+				// System.err.println("Sleeptime = " + sleepTime);
 			}
 		}
 

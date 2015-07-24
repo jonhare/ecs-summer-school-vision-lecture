@@ -27,6 +27,7 @@ public class ColourSpacesDemo extends SimpleCameraDemo implements Slide, VideoDi
 	protected volatile ColourSpace colourSpace = ColourSpace.RGB;
 
 	protected ColourSpacesDemo() {
+		super("FaceTime");
 		this.colourSpaces = new ColourSpace[] {
 				ColourSpace.RGB, ColourSpace.HSV, ColourSpace.HUE, ColourSpace.H1H2
 		};

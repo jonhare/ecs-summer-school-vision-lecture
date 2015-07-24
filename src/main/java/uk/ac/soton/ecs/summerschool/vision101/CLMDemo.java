@@ -38,7 +38,7 @@ public class CLMDemo implements Slide, VideoDisplayListener<MBFImage> {
 		final JPanel base = new JPanel();
 		base.setPreferredSize(new Dimension(width, height));
 		base.setLayout(new GridBagLayout());
-		vc = new VideoCaptureComponent(640, 480);
+		vc = new VideoCaptureComponent(640, 480, "iSight");
 		vc.getDisplay().addVideoListener(this);
 		base.add(vc);
 
@@ -93,9 +93,9 @@ public class CLMDemo implements Slide, VideoDisplayListener<MBFImage> {
 			image.drawLine(
 					new Point2dImpl((float) f.shape.get(connections[0][i], 0),
 							(float) f.shape.get(connections[0][i] + n, 0)),
-							new Point2dImpl((float) f.shape.get(connections[1][i], 0),
-									(float) f.shape.get(connections[1][i] + n, 0)),
-									3, RGBColour.WHITE);
+					new Point2dImpl((float) f.shape.get(connections[1][i], 0),
+							(float) f.shape.get(connections[1][i] + n, 0)),
+					3, RGBColour.WHITE);
 		}
 
 		final double[] shapeVector = f.clm._plocal.getColumnPackedCopy();

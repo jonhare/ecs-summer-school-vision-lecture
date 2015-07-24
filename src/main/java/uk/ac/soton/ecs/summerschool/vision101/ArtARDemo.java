@@ -39,6 +39,8 @@ public class ArtARDemo extends SimpleCameraDemo implements Slide, VideoDisplayLi
 	private volatile boolean isRunning;
 
 	public ArtARDemo() throws IOException {
+		super("FaceTime");
+
 		engine = new DoGSIFTEngine();
 		engine.getOptions().setDoubleInitialImage(false);
 

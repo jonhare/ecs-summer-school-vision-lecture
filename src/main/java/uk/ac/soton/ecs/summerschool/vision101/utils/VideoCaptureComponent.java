@@ -44,6 +44,19 @@ public class VideoCaptureComponent extends Box implements ItemListener, Closeabl
 	 * @throws VideoCaptureException
 	 */
 	public VideoCaptureComponent(int width, int height) throws VideoCaptureException {
+		this(width, height, "FaceTime");
+	}
+
+	/**
+	 * Construct with the given dimensions
+	 *
+	 * @param width
+	 *            the width
+	 * @param height
+	 *            the height
+	 * @throws VideoCaptureException
+	 */
+	public VideoCaptureComponent(int width, int height, String devName) throws VideoCaptureException {
 		super(BoxLayout.Y_AXIS);
 
 		this.setOpaque(false);
@@ -61,7 +74,7 @@ public class VideoCaptureComponent extends Box implements ItemListener, Closeabl
 			vc = new ArrayBackedVideo<MBFImage>(frames);
 		} else {
 			for (final Device d : devices) {
-				if (d.getNameStr().contains("FaceTime")) {
+				if (d.getNameStr().contains(devName)) {
 					currentDevice = d;
 					break;
 				}
@@ -89,6 +102,8 @@ public class VideoCaptureComponent extends Box implements ItemListener, Closeabl
 			for (final Device s : devices)
 				sources.addItem(s.getNameStr());
 		}
+
+		sources.setSelectedItem(currentDevice.getNameStr());
 
 		sources.addItemListener(this);
 		sourcesPanel.add(sources);

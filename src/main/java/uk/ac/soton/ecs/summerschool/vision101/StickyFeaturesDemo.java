@@ -21,6 +21,8 @@ public class StickyFeaturesDemo extends SimpleCameraDemo implements VideoDisplay
 	private FImage prevFrame;
 
 	public StickyFeaturesDemo() {
+		super("iSight");
+
 		final int nFeatures = 100;
 		final TrackingContext tc = new TrackingContext();
 		final FeatureList fl = new FeatureList(nFeatures);

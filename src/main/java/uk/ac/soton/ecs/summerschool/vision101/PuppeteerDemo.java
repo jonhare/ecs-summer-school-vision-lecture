@@ -40,6 +40,7 @@ public class PuppeteerDemo extends SimpleCameraDemo implements VideoDisplayListe
 	 * @throws IOException
 	 */
 	public PuppeteerDemo() throws MalformedURLException, IOException {
+		super("iSight");
 		tracker.fcheck = true;
 
 		final CLMFaceTracker ptracker = new CLMFaceTracker();
