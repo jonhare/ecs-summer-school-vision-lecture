@@ -168,8 +168,7 @@ public class InmoovDemo implements Slide, VideoDisplayListener<MBFImage>, Action
 			lastString = string;
 			lastTime = System.currentTimeMillis();
 		} catch (final IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+			// ignore - probably not OSX...
 		}
 	}
 
